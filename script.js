@@ -110,3 +110,24 @@ function contoAllaRovescia(start) {
 }
 //execute counter
 contoAllaRovescia(5);
+
+//* Snack 9 - BONUS - sequenzaOperazioni
+function sequenzaOperazioni(operazioni, interval) {
+  let index = 0;
+  function nextOperation() {
+    if (index < operazioni.length) {
+      operazioni[i]();
+      index++;
+      setTimeout(nextOperation, interval);
+    }
+  }
+  nextOperation();
+}
+
+const operazioni = [
+  () => console.log("operazione 1"),
+  () => console.log("operazione 2"),
+  () => console.log("operazione 3"),
+];
+
+sequenzaOperazioni(operazioni, 1000);
