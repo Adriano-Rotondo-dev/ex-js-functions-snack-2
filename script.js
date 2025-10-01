@@ -139,11 +139,13 @@ function sequenzaOperazioni(operazioni, interval) {
   nextOperation();
 }
 
-const operazioni = [
-  () => console.log("operazione 1"),
-  () => console.log("operazione 2"),
-  () => console.log("operazione 3"),
-];
+const operazioni =
+  ([
+    () => console.log("operazione 1"),
+    () => console.log("operazione 2"),
+    () => console.log("operazione 3"),
+  ],
+  1000);
 
 sequenzaOperazioni(operazioni, 1000);
 
