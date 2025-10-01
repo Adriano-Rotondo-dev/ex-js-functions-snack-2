@@ -144,4 +144,19 @@ sequenzaOperazioni(
   1000
 );
 
-//* Snack 10 - BONUS -
+//* Snack 10 - BONUS - throttler per limitare l'esecuzione di una funzione
+
+function creaThrottler(callback, limit) {
+  let lastExecution = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastExecution >= limit) {
+      lastExecution = now;
+      callback(...args);
+    } else {
+      console.log("cannot execute");
+    }
+  };
+}
+
+const throttledLog = creaThrottler(() => console.log("Eseguito"), 2000);
