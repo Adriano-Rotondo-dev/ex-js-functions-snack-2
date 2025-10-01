@@ -17,7 +17,7 @@ const arrowSum = (a, b) => a + b;
 console.log(`La somma di 5 + 6 è`, arrowSum(5, 6)); //output:11
 
 //*Snack 2 - Quadrato
-const quadrato = (a) => a * a;
+const quadrato = (a) => a * a; // a ** 2 anche valido
 console.log("Il quadrato di 3 è", quadrato(3));
 
 //*Snack 3 - eseguiOperazione
@@ -81,6 +81,21 @@ setTimeout(() => {
 }, 5000);
 #endregion Snack 5 */
 
+//Snack 6 - contatore
+
+function creaContatoreAutomatico(interval) {
+  let count = 0;
+  return () => {
+    setInterval(() => {
+      count++;
+      console.log(`il contatore è a ${count}`);
+    }, interval);
+  };
+}
+
+const count1sec = creaContatoreAutomatico(1000);
+// count1sec();   commented out to stop counter
+
 // Snack 7 - eseguiEferma
 
 function eseguiEFerma(msg, interval, stop) {
@@ -131,3 +146,5 @@ const operazioni = [
 ];
 
 sequenzaOperazioni(operazioni, 1000);
+
+//* Snack 10 - BONUS -
